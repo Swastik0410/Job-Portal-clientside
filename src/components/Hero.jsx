@@ -15,10 +15,6 @@ const Hero = () => {
           location:locationRef.current.value
         })
         setIsSearched(true)
-        console.log({
-          title:titleRef.current.value,
-          location:locationRef.current.value
-        })
       }
 
   return (
