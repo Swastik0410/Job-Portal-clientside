@@ -1,8 +1,14 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 const Applications = () => {
   return (
-    <div>Applications</div>
+    <>
+    <Navbar/>
+    <div>
+      <h2>Your Resume</h2>
+    </div>
+    </>
   )
 }
 
