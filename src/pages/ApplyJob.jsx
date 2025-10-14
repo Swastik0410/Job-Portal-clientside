@@ -26,23 +26,24 @@ const ApplyJob = () => {
   return jobData ? (
     <>
       <Navbar />
-      <div className='min-h-screen py-10 bg-gray-50'>
+
+      <div className='min-h-screen py-12 bg-gray-50'>
         <div className='container mx-auto px-4 2xl:px-20'>
-          {/* Job Header Card */}
-          <div className='bg-white rounded-2xl shadow-md p-8 md:p-12 border border-gray-200 mb-10'>
-            <div className='flex flex-col md:flex-row justify-between items-center gap-8'>
+          {/* Job Header */}
+          <div className='bg-white rounded-2xl shadow-sm p-8 md:p-10 border border-gray-100 mb-10'>
+            <div className='flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10'>
               {/* Left Side */}
-              <div className='flex flex-col md:flex-row items-center text-center md:text-left'>
+              <div className='flex flex-col md:flex-row items-center text-center md:text-left gap-4 md:gap-6'>
                 <img
                   src={jobData.companyId.image}
                   alt=''
-                  className='h-24 w-24 object-contain bg-white rounded-xl border border-gray-200 p-3 mb-4 md:mb-0 md:mr-6'
+                  className='h-24 w-24 object-contain bg-white rounded-xl border border-gray-200 p-3 shadow-sm'
                 />
                 <div>
-                  <h1 className='text-3xl font-semibold text-gray-800'>
+                  <h1 className='text-3xl font-bold text-gray-800'>
                     {jobData.title}
                   </h1>
-                  <div className='flex flex-wrap justify-center md:justify-start gap-4 mt-3 text-gray-600 text-sm'>
+                  <div className='flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 mt-3 text-gray-600 text-sm'>
                     <span className='flex items-center gap-2'>
                       <img src={assets.suitcase_icon} alt='' className='h-4 w-4' />
                       {jobData.companyId.name}
@@ -65,7 +66,7 @@ const ApplyJob = () => {
 
               {/* Right Side */}
               <div className='flex flex-col items-center md:items-end'>
-                <button className='bg-blue-600 hover:bg-blue-700 transition p-2.5 px-10 text-white rounded-lg shadow'>
+                <button className='bg-blue-600 hover:bg-blue-700 transition-colors p-2.5 px-10 text-white rounded-lg shadow-md'>
                   Apply Now
                 </button>
                 <p className='mt-2 text-gray-500 text-sm'>
@@ -75,10 +76,10 @@ const ApplyJob = () => {
             </div>
           </div>
 
-          {/* Main Content */}
+          {/* Content Section */}
           <div className='flex flex-col lg:flex-row gap-10'>
             {/* Left: Job Description */}
-            <div className='w-full lg:w-2/3 bg-white rounded-2xl shadow-sm p-8 border border-gray-200'>
+            <div className='w-full lg:w-2/3 bg-white rounded-2xl shadow-sm p-8 border border-gray-100'>
               <h2 className='font-bold text-2xl mb-4 text-gray-800'>
                 Job Description
               </h2>
@@ -87,7 +88,7 @@ const ApplyJob = () => {
                 dangerouslySetInnerHTML={{ __html: jobData.description }}
               ></div>
 
-              <button className='bg-blue-600 hover:bg-blue-700 transition p-2.5 px-10 text-white rounded-lg mt-10 shadow'>
+              <button className='bg-blue-600 hover:bg-blue-700 transition-colors p-2.5 px-10 text-white rounded-lg mt-10 shadow-md'>
                 Apply Now
               </button>
             </div>
@@ -113,6 +114,7 @@ const ApplyJob = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   ) : (
