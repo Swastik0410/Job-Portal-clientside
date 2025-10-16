@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
 
 const Dashboard = () => {
@@ -22,6 +22,32 @@ const Dashboard = () => {
                 </div>
             </div>
         </div>
+     </div>
+
+     <div className='flex items-start'>
+        {/*Left sidebar to add job , manage jobs and view applications*/}
+        <div className='inline-block min-h-screen border-r-2'>
+            <ul className='flex flex-col items-start pt-5 text-gray-800'>
+                <NavLink to={'/dashboard/add-job'} className={({isActive})=>`flex items-center p-3 sm:px-6 gap-2 w-gull hover:bg-gray-100 ${isActive &&'bg-blue-100 border-r-4 border-blue-500'}`}>
+                    <img src={assets.add_icon} alt="" className='min-h-4' />
+                    <p className='max-sm:hidden'>Add Job</p>
+                </NavLink>
+
+                 <NavLink to={'/dashboard/manage-jobs'} className={({isActive})=>`flex items-center p-3 sm:px-6 gap-2 w-gull hover:bg-gray-100 ${isActive &&'bg-blue-100 border-r-4 border-blue-500'}`}>
+                    <img src={assets.home_icon} alt=""className='min-h-4' />
+                    <p className='max-sm:hidden'>Manage Jobs</p>
+                </NavLink>
+
+                 <NavLink to={'/dashboard/view-applications'} className={({isActive})=>`flex items-center p-3 sm:px-6 gap-2 w-gull hover:bg-gray-100 ${isActive &&'bg-blue-100 border-r-4 border-blue-500'}`}>
+                    <img src={assets.person_tick_icon} alt="" className='min-h-4' />
+                    <p className='max-sm:hidden'>View Applications </p>
+                </NavLink>
+            </ul>
+        </div>
+        <div>
+            <Outlet></Outlet>
+        </div>
+
      </div>
     </div>
   )
